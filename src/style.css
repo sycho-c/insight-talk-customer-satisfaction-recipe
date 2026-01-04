@@ -312,6 +312,25 @@ h1 {
   font-family: "JetBrains Mono", monospace;
 }
 
+/* Instagram embed */
+.embed-wrap {
+  margin-top: 0.8rem;
+  width: min(400px, 82vw);
+  height: 74vh;
+  margin-left: auto;
+  margin-right: auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.embed-wrap iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+  display: block;
+}
+
 /* Numbered list - Step/Process style */
 .numbered-list {
   margin-top: 2rem;

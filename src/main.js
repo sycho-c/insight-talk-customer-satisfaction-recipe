@@ -7,6 +7,10 @@ const slides = [
     subtitle: '우리금융캐피탈 프로젝트에서 경험한, 고객만족이 만들어진 과정',
   },
   {
+    kicker: 'Warm Up',
+    instagramEmbed: `<iframe src="https://www.instagram.com/reel/DRycAhPk45W/embed" title="Insight Talk Reel" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>`,
+  },
+  {
     kicker: '프로젝트 배경',
     title: '이 프로젝트는 무엇이 달랐나',
     compare: {
@@ -187,7 +191,9 @@ const renderSlide = (index) => {
         ${
           slide.statement
             ? `<h1 class="statement">${slide.statement}</h1>`
-            : `<h1>${slide.title}</h1>`
+            : !slide.title
+              ? ''
+              : `<h1>${slide.title}</h1>`
         }
         ${slide.subtitle ? `<p class="subtitle">${slide.subtitle}</p>` : ''}
 
@@ -203,6 +209,12 @@ const renderSlide = (index) => {
                   <ul>${slide.compare.right.items.map((item) => `<li>${item}</li>`).join('')}</ul>
                 </div>
               </div>`
+            : ''
+        }
+
+        ${
+          slide.instagramEmbed
+            ? `<div class="embed-wrap">${slide.instagramEmbed}</div>`
             : ''
         }
 
@@ -321,6 +333,7 @@ const renderSlide = (index) => {
       <div class="hint">← → 키 또는 클릭으로 이동</div>
     </div>
   `
+
 }
 
 const clampIndex = (next) => {
