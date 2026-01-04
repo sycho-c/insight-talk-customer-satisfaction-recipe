@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/insight-talk-customer-satisfaction-recip/'
+  base: '/insight-talk-customer-satisfaction-recipe/'
 })
