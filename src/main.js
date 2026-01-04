@@ -29,13 +29,8 @@ const slides = [
   },
   {
     kicker: '핵심 인사이트',
-    title: '1인이 가능했던 이유',
-    subtitle: 'AI의 역할을 올바르게 정의하기',
-    grid: [
-      { label: 'AI는', value: '수행자가 아니다' },
-      { label: 'AI는', value: '서포터다' },
-      { label: 'AI가 돕는 것', value: '분석·정리·속도' },
-    ],
+    statement: 'AI는 결정하지 않는다.',
+    statementSub: '분석하고, 정리하고, 속도를 높인다. 그것이 AI의 역할이다.',
   },
   {
     kicker: '이해관계자',
@@ -50,14 +45,8 @@ const slides = [
   },
   {
     kicker: '사람의 가치',
-    title: '사람의 역할이 필요한 순간들',
-    subtitle: 'AI가 대체할 수 없는 영역',
-    bullets: [
-      '보안 취약점의 실제 위험도 판단',
-      '담당자별 다른 기준과 우선순위 이해',
-      '이해관계 조율과 합의 도출',
-      '맥락을 고려한 상황 판단',
-    ],
+    statement: '판단은 사람의 몫이다.',
+    statementSub: '위험도, 우선순위, 이해관계, 맥락. AI가 대체할 수 없는 영역.',
   },
   {
     kicker: '의사결정',
@@ -100,9 +89,8 @@ const slides = [
   },
   {
     kicker: '마무리',
-    title: '고객만족은 사람이 완성한다',
-    subtitle: 'AI는 그 과정을 돕는 역할',
-    quote: '기술은 도구일 뿐, 고객을 이해하고 만족시키는 것은 결국 사람의 몫입니다.',
+    statement: '고객만족은 사람이 완성한다.',
+    statementSub: '기술은 도구일 뿐.',
   },
 ]
 
@@ -118,8 +106,13 @@ const renderSlide = (index) => {
         <span class="counter">${index + 1} / ${slides.length}</span>
       </div>
       <div class="content">
-        <h1>${slide.title}</h1>
-        <p class="subtitle">${slide.subtitle || ''}</p>
+        ${
+          slide.statement
+            ? `<h1 class="statement">${slide.statement}</h1>
+               ${slide.statementSub ? `<p class="statement-sub">${slide.statementSub}</p>` : ''}`
+            : `<h1>${slide.title}</h1>
+               <p class="subtitle">${slide.subtitle || ''}</p>`
+        }
         ${slide.quote ? `<div class="quote">"${slide.quote}"</div>` : ''}
         ${
           slide.bullets
