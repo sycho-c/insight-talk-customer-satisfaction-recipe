@@ -2,7 +2,7 @@ import './style.css'
 
 const slides = [
   {
-    kicker: 'Insight Talk 2025',
+    kicker: 'Insight Talk 2026',
     title: '고객만족 레시피',
     subtitle: '우리금융캐피탈 프로젝트에서 검증한, 사람과 AI의 역할',
     meta: '10 slides · 10-15 minutes',
